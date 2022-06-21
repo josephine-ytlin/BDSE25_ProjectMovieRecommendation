@@ -5,11 +5,11 @@
 ├── model
 ├── analyze
 │   ├── EDA
-│   │   ├── data_collection
-│   │   └── tidy_data
 │   └── feature_engineering   
-├── data                  
-│   ├── merged_data        
+├── data   
+│   ├── collected
+│   ├── tidy
+│   ├── merged        
 │   └── sql          
 └── README.md
      
