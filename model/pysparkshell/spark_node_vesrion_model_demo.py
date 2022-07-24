@@ -5,22 +5,16 @@ setup = """
 import locale
 """
 test_yarn_mode = """
-from pyspark.sql import SparkSession
 from pyspark.ml.evaluation import RegressionEvaluator 
 from pyspark.ml.recommendation import ALS
 from pyspark.ml.tuning import TrainValidationSplit, ParamGridBuilder, CrossValidator
+from pyspark.context import SparkContext
+from pyspark.sql import SparkSession
+import pyspark.sql.functions as fn
 
-
-#yarn mode
-spark = SparkSession\
-        .builder\
-        .master("yarn")\
-        .config('spark.executor.instances','10')\
-        .config('spark.executor.memory','8G')\
-        .config('spark.driver.memory','16G')\
-        .appName("modelDemotest0718")\
-        .getOrCreate()
-
+sc = SparkContext('yarn')
+spark = SparkSession(sc)
+spark.conf.set("spark.sql.execution.arrow.pyspark.enabled", True)
 # Read raw dataset
 
 
@@ -81,11 +75,6 @@ print("yarn mode running time = ", yarn_timeit/5)
 # from pyspark.ml.evaluation import RegressionEvaluator 
 # from pyspark.ml.recommendation import ALS
 # from pyspark.ml.tuning import TrainValidationSplit, ParamGridBuilder, CrossValidator
-
-# #local mode
-# spark = SparkSession.builder.appName("modelDemoLocal").getOrCreate()
-
-# #.config('spark.driver.memory','16G')
 
 # df_ratings = spark.read.csv("file:///home/yutinglin/ml-25m/ratings.csv", inferSchema=True, header=True)
 # df_movies = spark.read.csv("file:///home/yutinglin/ml-25m/movies.csv", inferSchema=True, header=True)
