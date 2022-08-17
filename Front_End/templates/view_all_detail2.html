@@ -1,0 +1,37 @@
+<div class="popular__product">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="section-title">
+                <h4>OTHERS ALSO LIKE.......</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        {% for picture in pictures %}
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product__item">
+
+                <a href="{{picture.imdb_url}}">
+                    <div class="test">
+                        <div class="product__item__pic set-bg" data-setbg="{{picture.poster_url}}"
+                            style="border-style:outset;border-color: #FFBB66">
+                            <!-- <img src="{{picture.link}}"> -->
+                            <div class="comment"><i class="fa fa-heart-o"></i> {{picture.mean}}</div>
+                            <div class="view"><i class="fa fa-eye"></i> {{picture.count|int}}</div>
+                        </div>
+                    </div>
+                </a>
+                <div class="product__item__text">
+                    <ul>
+                        {% for i in picture.genre.split(' ') %}
+                        <li>{{i}}</li>
+                        {% endfor %}
+                    </ul>
+                    <h5><a href="{{picture.imdb_url}}">{{picture.title}}</a></h5>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
