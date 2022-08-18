@@ -1,8 +1,8 @@
 # BDSE25_ProjectMovie
 ```
 
-├── spark
-├── flask/app
+├── Backend
+├── Frontend
 ├── model
 ├── analyze
 │   ├── EDA
