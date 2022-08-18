@@ -1,0 +1,5 @@
+,title,links,content
+0,每一年釋出多少電影,https://github.com/bdse2516/movielensanalysis/blob/master/Number%20of%20Movies%20per%20Year.jpg?raw=true,自1874年起，每年釋出至少1部電影，釋出最多電影的年份是2016年共釋出2478部。
+1,每個評分區間有多少部電影,https://github.com/bdse2516/movielensanalysis/blob/master/Movies'%20Counts%20per%20Rating%20Range.png?raw=true,所有電影平均的平均分數為3.07分，分數0~1的電影共有1265部，分數1~2共4416部，分數2~3共20570部，分數3~4共30051部，分數4~5共2745部。
+2,每個電影類型的評分次數 vs 平均評分,https://github.com/gogovamosrafa/MovieLens-Analysis-and-Visualization/blob/main/images/newplot.png?raw=true,由此圖可以看到熱門評價的電影的平均分數並沒有很高，反而比較冷門的像是黑色電影(Film-Noir)、紀錄片(Documentary)或是音樂劇(Musical)的平均分數卻比其他熱門片種還高。
+3,以平均分數與評分次數為基礎之電影分群,https://github.com/bdse2516/movielensanalysis/blob/master/kmeans%20count%20mean.png?raw=true,使用K-means clustering，依照平均分數及評分次數，可將電影可大致分成四群電影，作為使用者喜好的參考指標。

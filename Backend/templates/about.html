@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BDSE25_第三組</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    {% block styles %}
+    {% include "_styles.html" %}
+    {% endblock styles %}
+   
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    {% block page_header %}
+    {% include "_header_about.html" %}
+    {% endblock page_header %}
+    <!-- Header End -->
+
+    <!-- Breadcrumb Begin -->
+    <!-- <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="./categories.html">Categories</a>
+                        <span>Romance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Breadcrumb End -->
+
+    <!-- Anime Section Begin -->
+    <section class="anime-details spad">
+        <div class="container">
+            <div class="anime__details__content">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="anime__details__pic set-bg" data-setbg="https://i.redd.it/1jofyu3ugsiz.jpg">
+                            <!-- <div class="anime__details__pic set-bg " data-setbg="static/img/film_poster1.jpg"> -->
+                            <!-- <div class="comment"><i class="fa fa-comments"></i> 11</div> -->
+                            <!-- <div class="view"><i class="fa fa-eye"></i> 9141</div> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="anime__details__text">
+                            <div class="anime__details__title">
+                                <h3>一鍵上影：電影喜好預測與推薦</h3>
+                                <!-- <span>フェイト／ステイナイト, Feito／sutei naito</span> -->
+                            </div>
+                            <div class="anime__details__rating">
+                                <div class="rating">
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <!-- <a href="#"><i class="fa fa-star-half-o"></i></a> -->
+                                </div>
+                                <!-- <span>1.029 Votes</span> -->
+                            </div>
+                            <p style="color: whitesmoke;">推薦系統(Recommender System)主要應用於預測用戶的喜好，並推薦符合用戶喜好的商品。自1998年起，Amazon便開始導入推薦系統，以上百萬的商品目錄為基礎提供數百萬用戶商品推薦服務；現今推薦系統更是廣泛應用於各行各業之中，透過個人化推薦，達到精準行銷。<br>
+                                我們的專題以2千500萬筆的用戶評分數據建置電影推薦系統，結合ALS模型及用戶分群技術，生成「猜你喜歡...」及「別人也喜歡...」兩種電影推薦模式。
+                            </p>
+                            <div class="anime__details__widget">
+                                <div class="row" style="color:whitesmoke">
+                                    <div class="col-lg-6 col-md-6" style="color:whitesmoke">
+                                        <ul>
+                                            <li><span>資料集:</span> MovieLens 25M</li>
+                                            <li><span>用戶評分資料:</span> 25,000,095筆</li>
+                                            <li><span>歷時電影資料:</span> 62,422筆</li>
+                                            <!-- <li><span>推薦系統模型:</span> ALS Model</li>
+                                            <li><span>運行環境:</span> Hadoop, Spark</li> -->
+                                        </ul>
+                                    </div>
+                                     <div class="col-lg-6 col-md-6">
+                                        <ul>
+                                            <li><span>推薦系統模型:</span> ALS Model</li>
+                                            <li><span>用戶分群技術:</span> K-Means</li>
+                                            <li><span>運行環境:</span> Hadoop, Spark</li>
+                                            <!-- <li><span>Duration:</span> 24 min/ep</li>
+                                            <li><span>Quality:</span> HD</li>
+                                            <li><span>Views:</span> 131,541</li> -->
+                                        </ul>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="anime__details__btn">
+                                <a href="https://github.com/josephine-ytlin/BDSE25_ProjectMovie/tree/yuting" class="follow-btn"><i class="fa fa-github"></i> Github</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+	<!-- Start Team Area -->
+	<section class="destinations-area section-gap">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="menu-content pb-25 col-lg-8">
+					<div class="title text-center">
+						<h1 class="mb-10" style="color: #ffffff;">Our Team</h1>
+						<h4 style="color: #ffffff;">團隊介紹</h4>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+                {%for i in range(len)%}
+				<div class="col-lg-4">
+                    
+					<div class="single-destinations">
+                        
+						<div class="text-center border-bottom p-40">
+							<img class="img-fluid rounded-circle mb-4" src="{{member[i]['photo']}}" alt="">
+						</div>
+						<div class="details text-center">
+							<h4>{{member[i]['name']}}</h4>
+							<p style="color: whitesmoke; font-size: 15px;">
+								{{member[i]['work']}}
+							</p>
+							<ul class="package-list">
+								<li class="d-flex justify-content-between align-items-center">
+									<a href="{{member[i]['cv']}}"
+										class="primary-btn1" target="_blank">Resume</a>
+									<a href="{{member[i]['portfolio']}}"
+										class="primary-btn1" target="_blank">作品集</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+                   
+				</div>
+                {%endfor%}
+                            
+                            
+
+                            <div style="clear:both;"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- Anime Section End -->
+
+        <!-- Footer Section Begin -->
+        <footer class="footer">
+            <div class="page-up">
+                <a href="index copy.html" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3" >
+                        <div class="footer__logo" style="width:75% ;border:0px;">
+                            <a href="./index.html"><img src="https://i.gifer.com/9QyD.gif" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="footer__nav">
+                            <ul>
+                                <li class="active"><a href="#">BDSE25_第三組_專題報告</a></li>
+                                <li class="active"><a href="#">!!僅供ispan專題練習使用,無任何商業行為!!</a></li>
+                                <!-- <li><a href="./categories.html">Categories</a></li>
+                                <li><a href="./blog.html">Our Blog</a></li>
+                                <li><a href="#">Contacts</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 版權資料不能移除 -->
+                    <div class="col-lg-3">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+        
+                      </div>
+                  </div>
+              </div>
+          </footer>
+          <!-- Footer Section End -->
+
+          <!-- Search model Begin -->
+          <div class="search-model">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <div class="search-close-switch"><i class="icon_close"></i></div>
+                <form class="search-model-form">
+                    <input type="text" id="search-input" placeholder="Search here.....">
+                </form>
+            </div>
+        </div>
+        <!-- Search model end -->
+
+        <!-- Js Plugins -->
+        {% block scripts %}
+        {% include "_scripts.html" %}
+        {% endblock scripts %}
+
+    </body>
+
+    </html>

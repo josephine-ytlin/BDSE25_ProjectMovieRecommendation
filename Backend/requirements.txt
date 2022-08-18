@@ -1,0 +1,9 @@
+Flask
+gunicorn
+flask_moment
+datetime
+pathlib
+sqlalchemy
+pandas
+numpy
+flask_mysqldb

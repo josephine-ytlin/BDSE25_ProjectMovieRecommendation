@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}BDSE25_第三組{% endblock title %}</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    {% block styles %}
+    {% include "_styles.html" %}
+    {% endblock styles %}
+    {% endblock head %}
+</head>
+
+<body>
+    {% block body %}
+    
+    <!-- Header Section Begin -->
+    {% block page_header %}
+    {% include "_page_header.html" %}
+    {% endblock page_header %}
+    
+    <section class="normal-breadcrumb set-bg" data-setbg="https://j.gifs.com/GZ1xj3.gif">
+        <div class="container">
+           
+            <div class="row">
+                <div class="col-lg text-center">
+                    <div class="normal__breadcrumb__text">
+                        <h2>{{username}}預測結果</h2>
+                        <p>Welcome to the BDSE25 third group</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--主要內容架構 Product Section Begin -->
+    {% block section %}
+    <section class="product spad">
+      
+        <div class="container ">   
+            <div class="flexRow">
+                <div class="col-lg-8 col-md-8 col-sm-8">
+                    <div class="section-title">
+                        <h4>YOU MAY LIKE ......</h4>
+                    </div>
+                </div>
+                {% block View_all %}       
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="btn__all">
+                        {% block url %}
+                        <a href="{{url_for('user1_detail1')}}" class="primary-btn">View All <span class="arrow_right"></span></a>
+                        {% endblock url %}
+                    </div>
+                </div>      
+                {% endblock View_all %}
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    {% block detail %}
+                    {% block detail1 %}
+                    {% include "home_detail1_content.html" %}
+                    {% endblock detail1 %}
+            <div class="flexRow">
+                        <div class="col-lg-8 col-md-8 col-sm-8">
+                            <div class="section-title">
+                                <h4>Others Also Like ......</h4>
+                            </div>
+                        </div>
+                        {% block View_all2 %}       
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="btn__all">
+                                {% block url2 %}
+                                <a href="{{url_for('user1_detail2')}}" class="primary-btn">View All <span class="arrow_right"></span></a>
+                                {% endblock url2 %}
+                            </div>
+                        </div>      
+                        {% endblock View_all2 %}
+                    </div>
+                    {% block detail2 %}
+                    {% include "home_detail2_content.html" %}
+                    {% endblock detail2 %}
+                    {% endblock detail %}
+                </div>   
+        </div>
+    </div>
+    <div class="product__sidebar__comment">   
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section> 
+    {% endblock section  %}
+<!-- 最下方版權區域Footer Section Begin -->
+<footer class="footer">
+    <div class="page-up">
+        <a href="{{url_for('index')}}" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3" >
+                <div class="footer__logo" style="width:75% ;border:0px;">
+                    <a href="{{url_for('index')}}"><img src="https://i.gifer.com/9QyD.gif" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="footer__nav">
+                    <ul>
+                        <li class="active"><a href="{{url_for('index')}}">BDSE25_第三組_專題報告</a></li>
+                        <li class="active"><a href="{{url_for('index')}}">!!僅供ispan專題練習使用,無任何商業行為!!</a></li>
+                        <!-- <li><a href="./categories.html">Categories</a></li>
+                        <li><a href="./blog.html">Our Blog</a></li>
+                        <li><a href="#">Contacts</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <!-- 版權資料不能移除 -->
+            <div class="col-lg-3">
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+
+              </div>
+          </div>
+      </div>
+  </footer>
+<!-- Js Plugins -->
+    {% block scripts %}
+    {% include "_scripts.html" %}
+    {% endblock scripts %}
+    {% endblock body %}
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>BDSE25_第三組</title>
+  <link href="/static/fontawesome-free-6.1.2-web/css/all.css" rel="stylesheet" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <style type="text/css">
+    .orange {
+      color: #dc3545;
+    }
+  </style>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
+    rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Main Stylesheet File -->
+  <link href="../static/css/style1.css" rel="stylesheet">
+  <link href="../static/css/login.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: TheEvent
+    Theme URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<Body>
+  <!--==========================
+    Header
+  ============================-->
+
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+    <div class="intro-container wow fadeIn">
+      <h1 class="mb-4 pb-0"><br><span class="mb-4 pb-0">
+          Imdb Movie</span> Recommend</h1>
+      <p class="mb-4 pb-0">BDSE25, Big Data, learning</p>
+      <a href="{{url_for('home')}}" id="btn" class="about-btn scrollto">開始預測</a>
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default" id="hide_area">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+            <div class="about-btn scrollto">個人化推薦</div>
+          </a>
+          <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+              <div class="wrapper">
+                <!-- <div class="logo"> -->
+                <!-- <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt=""> -->
+                <!-- </div> -->
+                <!-- <p class="mb-4 pb-0">Login For More Recommendations</p><br><span class="mb-4 pb-0"> Recommendations</span> -->
+                <div class="text-center mt-4 name">
+                  Login For More Recommendations
+                </div>
+                <form class="p-3 mt-3" action="{{ url_for('index') }}" method="post">
+
+                  <div class="form-field d-flex align-items-center">
+                    <span class="far fa-user"></span>
+                    <input type="text" name="username" id="username" placeholder="Username" required>
+                  </div>
+                  <div class="form-field d-flex align-items-center">
+                    <span class="fas fa-key"></span>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                  </div>
+                  <div class="msg">{{ msg }}</div><br>
+                  <button class="btn mt-3" type="submit">Login</button>
+
+                </form>
+                <!-- <div class="text-center fs-6">
+                                    <a href="#">Forget password?</a> or <a data-toggle="collapse"
+                                        data-parent="#accordion" href="#collapseTwo">Sign up</a>
+                                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- register -->
+        <div class="panel panel-default">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+            <p class="about-btn scrollto" onclick="Show_Hide()">Sign up</p>
+          </a>
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+              <div class="wrapper">
+                <form class="p-3 mt-3" action="{{ url_for('register') }}" method="post">
+                  <div class="form-field d-flex align-items-center">
+                    <span class="fas fa-user fa-lg me-3 fa-fw"></span>
+                    <input id="username" name="username" type="text" placeholder="UserName" required>
+                  </div>
+                  <div class="form-field d-flex align-items-center">
+                    <span class="fas fa-envelope fa-lg me-3 fa-fw"></span>
+                    <input id="email" name="email" type="text" placeholder="Email" required>
+                  </div>
+                  <div class="form-field d-flex align-items-center">
+                    <span class="fas fa-lock fa-lg me-3 fa-fw"></span>
+                    <input id="password" name="password" type="password" placeholder="Password" required>
+                  </div>
+
+                  <!-- {% for message in get_flashed_messages() %}
+
+                  <div class="alert alert-danger" role="alert">
+                       {{ message }}
+                       <button data-bs-dismiss="alert" class="btn mt-3" type="submit">Register</button>
+                  </div>
+
+                  {% endfor %}
+                  <button class="btn mt-3" type="submit">Register</button> -->
+
+                  <input class="btn mt-3" type="submit" value="Register">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="msg" style="color: #dc3545 ;">{{msg}}</div>
+  </section>
+
+
+  <main id="main">
+
+
+
+    <!-- JavaScript Libraries -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="http://malsup.github.io/jquery.blockUI.js"></script>
+    <script>
+      $(function () {
+        $("#btn").click(function () {//在button click事件裡
+          $.blockUI({
+            message: "<i class='fa-solid fa-cog fa-spin orange' style='font-size:600%'></i>",
+            //borderWidth:'0px' 和透明背景
+            css: { borderWidth: '0px', backgroundColor: 'transparent' },
+          });
+        });//end click
+
+      });    
+    </script>
+    <script src="../static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/lib/superfish/hoverIntent.js"></script>
+    <script src="../static/lib/superfish/superfish.min.js"></script>
+    <script src="../static/lib/wow/wow.min.js"></script>
+    <script src="../static/lib/venobox/venobox.min.js"></script>
+    <script src="../static/js/login_show_hide.js"></script>
+
+
+
+    <!-- Template Main Javascript File -->
+    <script src="../static/js/main1.js"></script>
+</body>
+
+</html>

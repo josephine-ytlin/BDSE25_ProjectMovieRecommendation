@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BDSE25_第三組</title>
+  <link rel="stylesheet" href="../static/css/check-box.css">
+  <script type="text/javascript">
+    function onlyOneCheckBox() {
+      var checkboxgroup = document.getElementById('checkboxgroup').getElementsByTagName("input");
+      var limit = 1;
+      for (var i = 0; i < checkboxgroup.length; i++) {
+        checkboxgroup[i].onclick = function () {
+          var checkedcount = 0;
+          var disableb = document.querySelector('#btn').disabled = true;
+          for (var i = 0; i < checkboxgroup.length; i++) {
+            checkedcount += (checkboxgroup[i].checked) ? 1 : 0;
+          }
+          if (checkedcount > limit) {
+            console.log("You can select maximum of " + limit + " checkbox.");
+            alert("抱歉只能選擇 " + limit + " 種電影群組！");
+            this.checked = false;
+          }
+        }
+      }
+    }
+    function checkResult() {
+      var list = [];
+      var chked = document.querySelectorAll("[type=checkbox]:checked");
+      for (var i = 0; i < chked.length; i++) {
+        list.push(chked[i].value);
+      }
+      console.log("You can select maximum of ");
+      alert("感謝您的填寫!按下確認跳轉頁面");
+      window.location = "{{url_for('home1')}}"
+    }
+    
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap CSS File -->
+  <link href="../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Main Stylesheet File -->
+  <link href="../static/css/style1.css" rel="stylesheet">
+  <link href="../static/css/login.css" rel="stylesheet">
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../static/lib/superfish/hoverIntent.js"></script>
+  <script src="../static/lib/superfish/superfish.min.js"></script>
+  <script src="../static/lib/wow/wow.min.js"></script>
+  <script src="../static/lib/venobox/venobox.min.js"></script>
+  <script src="../static/js/main1.js"></script>
+  <script>
+     $(function () {
+        $("#btn").click(function () {//在button click事件裡
+          $.blockUI({
+            message: "<i class='fa-solid fa-cog fa-spin orange' style='font-size:600%'></i>",
+            //borderWidth:'0px' 和透明背景
+            css: { borderWidth: '0px', backgroundColor: 'transparent' },
+          });
+        });//end click
+
+      });    
+  </script>
+</head>
+
+<body style="background-color:rgb(5,12,33)">
+
+  <section class="anime-details spad">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8">
+        <div class="section-title" style="z-index:10000">
+          <h3>
+            <font style="color:red">選擇一部電影進行預測</font>
+          </h3>
+        </div>
+      </div>
+    </div>
+    <form action="/home1" method='post' >
+      <div id="checkboxgroup" class="grid" style="background-color:rgb(5,12,33)">
+        <label class="card" for="check1">
+          <input class="card__input" type="checkbox" name="genre" id="check1" value="Cluster 1" />
+          <div class="card__body">
+            <div class="card__body-cover"><img class="card__body-cover-image"
+                src="https://m.media-amazon.com/images/M/MV5BOTk2NDNjZWQtMGY0Mi00YTY2LWE5MzctMGRhZmNlYzljYTg5XkEyXkFqcGdeQXVyMTAyNjg4NjE0._V1_.jpg" /><span
+                class="card__body-cover-checkbox">
+                <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </svg></span></div>
+            <header class="card__body-header">
+              <h2 class="card__body-header-title">Blade</h2>
+            </header>
+
+          </div>
+        </label>
+        <!-- divider -->
+        <label class="card" id="checkboxgroup">
+          <input class="card__input" type="checkbox" name="genre" id="check2" value="Cluster 2" />
+          <div class="card__body">
+            <div class="card__body-cover"><img class="card__body-cover-image"
+                src="https://m.media-amazon.com/images/M/MV5BN2RkYWVkZDQtNTMxMi00NWQ4LWE2ODctNmQzOWM2NjQzYzdlXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg" />
+              <span class="card__body-cover-checkbox">
+                <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </svg>
+              </span>
+            </div>
+            <header class="card__body-header">
+              <h4 class="card__body-header-title">Mission: Impossible II</h4>
+            </header>
+          </div>
+        </label>
+        <!-- divider -->
+        <label class="card" for="check3" id="checkboxgroup">
+          <input class="card__input" type="checkbox" name="genre" id="check3" value="Cluster 3" />
+          <div class="card__body">
+            <div class="card__body-cover"><img class="card__body-cover-image"
+                src="https://m.media-amazon.com/images/M/MV5BNjE4MjQyNjUtZTNmYy00ZmNlLTk2ODUtN2YzODIwNDdkM2EwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg" /><span
+                class="card__body-cover-checkbox">
+                <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </svg></span></div>
+            <header class="card__body-header">
+              <h2 class="card__body-header-title">The Net</h2>
+            </header>
+          </div>
+        </label>
+        <!-- divider -->
+        <label class="card" for="check4" id="checkboxgroup">
+          <input class="card__input" type="checkbox" name="genre" id="check4" value="Cluster 4" />
+          <div class="card__body">
+            <div class="card__body-cover"><img class="card__body-cover-image"
+                src="https://m.media-amazon.com/images/M/MV5BZTI3YzZjZjEtMDdjOC00OWVjLTk0YmYtYzI2MGMwZjFiMzBlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" /><span
+                class="card__body-cover-checkbox">
+                <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </svg></span></div>
+            <header class="card__body-header">
+              <h4 class="card__body-header-title">Minority Report</h4>
+            </header>
+          </div>
+        </label>
+        <!-- divider -->
+        <label class="card" for="check5" id="checkboxgroup">
+          <input class="card__input" type="checkbox" name="genre" id="check5" value="Cluster 5" />
+          <div class="card__body">
+            <div class="card__body-cover"><img class="card__body-cover-image"
+                src="https://m.media-amazon.com/images/M/MV5BMzMzYzk3ZTEtZDg0My00MTY5LWE3ZmQtYzNhYjhjN2RhZGRjL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg" /><span
+                class="card__body-cover-checkbox">
+                <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </svg></span></div>
+            <header class="card__body-header">
+              <h2 class="card__body-header-title">Hard 2</h2>
+            </header>
+          </div>
+        </label>
+        <!-- divider -->
+        <label class="card" for="check6" id="checkboxgroup">
+          <input class="card__input" type="checkbox" name="genre" id="check6" value="Cluster 6" />
+          <div class="card__body">
+            <div class="card__body-cover"><img class="card__body-cover-image"
+                src="https://m.media-amazon.com/images/M/MV5BMjE2NTU2ODI0MV5BMl5BanBnXkFtZTcwNTIwODU2NA@@._V1_.jpg" /><span
+                class="card__body-cover-checkbox">
+                <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </svg></span></div>
+            <header class="card__body-header">
+              <h2 class="card__body-header-title">Rob Roy</h2>
+            </header>
+          </div>
+        </label>
+        <!-- divider -->
+        <label class="card" for="check7" id="checkboxgroup">
+          <input class="card__input" type="checkbox" name="genre" id="check7" value="Cluster 7" />
+          <div class="card__body">
+            <div class="card__body-cover"><img class="card__body-cover-image"
+                src="https://m.media-amazon.com/images/M/MV5BYWMwMzQxZjQtODM1YS00YmFiLTk1YjQtNzNiYWY1MDE4NTdiXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_.jpg" /><span
+                class="card__body-cover-checkbox">
+                <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </svg></span></div>
+            <header class="card__body-header">
+              <h4 class="card__body-header-title">Black Hawk Down</h4>
+            </header>
+          </div>
+        </label>
+        <!-- divider -->
+        <label class="card" for="check8" id="checkboxgroup">
+          <input class="card__input" type="checkbox" name="genre" id="check8" value="Cluster 8" />
+          <div class="card__body">
+            <div class="card__body-cover"><img class="card__body-cover-image"
+                src="https://m.media-amazon.com/images/M/MV5BZTk2ZmUwYmEtNTcwZS00YmMyLWFkYjMtNTRmZDA3YWExMjc2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" /><span
+                class="card__body-cover-checkbox">
+                <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </svg></span></div>
+            <header class="card__body-header">
+              <h2 class="card__body-header-title">Jumanji</h2>
+            </header>
+          </div>
+        </label>
+        <!-- divider -->
+        <label class="card" for="check9" id="checkboxgroup">
+          <input class="card__input" type="checkbox" name="genre" id="check9" value="Cluster 9" />
+          <div class="card__body">
+            <div class="card__body-cover"><img class="card__body-cover-image"
+                src="https://m.media-amazon.com/images/M/MV5BNThmZGY4NzgtMTM4OC00NzNkLWEwNmEtMjdhMGY5YTc1NDE4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" /><span
+                class="card__body-cover-checkbox">
+                <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </svg></span></div>
+            <header class="card__body-header">
+              <h3 class="card__body-header-title">A Bug's Life</h3>
+            </header>
+          </div>
+        </label>
+        <!-- divider -->
+        <label class="card" for="check10" id="checkboxgroup">
+          <input class="card__input" type="checkbox" name="genre" id="check10" value="Cluster 10" />
+          <div class="card__body">
+            <div class="card__body-cover"><img class="card__body-cover-image"
+                src="https://m.media-amazon.com/images/M/MV5BMTc0NTUwMTU5OV5BMl5BanBnXkFtZTcwNjAwNzQzMw@@._V1_.jpg" /><span
+                class="card__body-cover-checkbox">
+                <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </svg></span></div>
+            <header class="card__body-header">
+              <h2 class="card__body-header-title">The Lion King</h2>
+            </header>
+          </div>
+
+        </label>
+      </div>
+      <a href="{{url_for('home1')}}" id="btn"class="about-btn scrollto">
+          <button id="btn" type="submit" onclick=checkResult() class="button-24" >Submit
+          </button> </a>
+    </form>
+  </section>
+
+
+  <script type="text/javascript">
+    onlyOneCheckBox()
+  </script>
+</body>
+
+</html>
