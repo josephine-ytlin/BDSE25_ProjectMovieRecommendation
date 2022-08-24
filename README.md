@@ -1,4 +1,4 @@
-# BDSE25_ProjectMovie
+# BDSE25_ProjectMovieRecommendation
 ```
 
 ├── Backend
