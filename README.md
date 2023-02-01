@@ -9,8 +9,8 @@
 │   └── feature_engineering   
 └── README.md
 ```     
-### This is a movie recommendation engine using Collaborative Filtering on Pyspark under Hadoop Ecosystem.
-#### We use MovieLens 25M dataset and applied to Alternating Least Squares (ALS) matrix factorization.
+###### This is a movie recommendation engine using Collaborative Filtering on Pyspark under Hadoop Ecosystem.
+###### We use MovieLens 25M dataset and applied to Alternating Least Squares (ALS) matrix factorization.
 
 #### ＊電影推薦系統：
 ##### &emsp; 預測用戶的觀賞傾向，依照用戶個人的喜好給出量身打造的電影推薦。
