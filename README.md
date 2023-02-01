@@ -18,15 +18,15 @@
 #### &emsp; Container:
 ##### &emsp; &emsp; 以VMware建立Linux虛擬機
 ####   Data collection:
-##### &emsp; 1.以Selenium於IMDB與TMDBf網路爬蟲蒐集電影海報
-##### &emsp; 2.下載movielens公開授權的使用者評分、電影名稱、電影出版年份
+##### &emsp; &emsp; 1.以Selenium於IMDB與TMDBf網路爬蟲蒐集電影海報
+##### &emsp; &emsp; 2.下載movielens公開授權的使用者評分、電影名稱、電影出版年份
 ####   Data analysis:
-##### &emsp; 1.以Python進行資料探索分析(EDA)
-##### &emsp; 2.以scikit-learn套件進行資料分群(K-means, DBSCAN）
+##### &emsp; &emsp; 1.以Python進行資料探索分析(EDA)
+##### &emsp; &emsp; 2.以scikit-learn套件進行資料分群(K-means, DBSCAN）
 ####   Data processing:
-##### &emsp; 1.以Apache Hadoop建立分散式檔案處理系統處理，分析2500萬筆資料
-##### &emsp; 2.以Pyspark(Apache Spark in Python)編寫分析與建置統計模型
-##### &emsp; 3.以YARN啟動大數據叢集，進行機器學習模型訓練
+##### &emsp; &emsp; 1.以Apache Hadoop建立分散式檔案處理系統處理，分析2500萬筆資料
+##### &emsp; &emsp; 2.以Pyspark(Apache Spark in Python)編寫分析與建置統計模型
+##### &emsp; &emsp; 3.以YARN啟動大數據叢集，進行機器學習模型訓練
 ####   Web delpoyment:
-##### &emsp; 1.以Flask框架呈現模型輸出之用戶電影推薦資料
-##### &emsp; 2.以HTML5與CSS5呈現後端傳送的資料部署至網站
+##### &emsp; &emsp; 1.以Flask框架呈現模型輸出之用戶電影推薦資料
+##### &emsp; &emsp; 2.以HTML5與CSS5呈現後端傳送的資料部署至網站
