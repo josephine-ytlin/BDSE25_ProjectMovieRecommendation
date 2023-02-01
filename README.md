@@ -13,10 +13,10 @@
 #### We use MovieLens 25M dataset and applied to Alternating Least Squares (ALS) matrix factorization.
 
 #### ＊電影推薦系統：
-#####    &nbsp;   預測用戶的觀賞傾向，依照用戶個人的喜好給出量身打造的電影推薦。
+##### [Tab] 預測用戶的觀賞傾向，依照用戶個人的喜好給出量身打造的電影推薦。
 #### ＊使用工具與方法：
 ####   Container:
-#####          以VMware建立Linux虛擬機
+#####    以VMware建立Linux虛擬機
 ####   Data collection:
 #####     1.以Selenium於IMDB與TMDBf網路爬蟲蒐集電影海報
 #####     2.下載movielens公開授權的使用者評分、電影名稱、電影出版年份
