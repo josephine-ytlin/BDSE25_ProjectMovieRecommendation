@@ -15,8 +15,8 @@
 #### ＊電影推薦系統：
 ##### &emsp; 預測用戶的觀賞傾向，依照用戶個人的喜好給出量身打造的電影推薦。
 #### ＊使用工具與方法：
-####   Container:
-##### &emsp; 以VMware建立Linux虛擬機
+#### &emsp; Container:
+##### &emsp; &emsp; 以VMware建立Linux虛擬機
 ####   Data collection:
 ##### &emsp; 1.以Selenium於IMDB與TMDBf網路爬蟲蒐集電影海報
 ##### &emsp; 2.下載movielens公開授權的使用者評分、電影名稱、電影出版年份
